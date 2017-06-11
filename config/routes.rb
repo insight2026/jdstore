@@ -11,7 +11,14 @@ Rails.application.routes.draw do
          patch :move_down
        end
      end
-     resources :orders
+    resources :orders do
+      member do
+        post :cancel
+        post :ship
+        post :shipped
+        post :return
+      end
+    end
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
